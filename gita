@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo -n "Название ветки: "
+read BRANCH
+echo -n "Имя пользователя на Github: "
+read USERNAME
+echo -n "Название репозитория на Github: "
+read REPO
+
+dir=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
+
+git init
+git add .
+git commit -m "Init commit"
+git branch -M "$BRANCH"
+git remote add origin "https://github.com/$USERNAME/$REPO.git"
+git push -u origin "$BRANCH"
