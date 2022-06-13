@@ -2,8 +2,7 @@
 
 echo -n "Enter branch name: "
 read BRANCH
-echo -n "Enter Github username: "
-read USERNAME
+USERNAME = $(git config user.name)
 echo -n "Enter Github repo name: "
 read REPO
 
