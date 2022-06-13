@@ -1,10 +1,10 @@
 #!/bin/bash
 
-echo -n "Название ветки: "
+echo -n "Enter branch name: "
 read BRANCH
-echo -n "Имя пользователя на Github: "
+echo -n "Enter Github username: "
 read USERNAME
-echo -n "Название репозитория на Github: "
+echo -n "Enter Github repo name: "
 read REPO
 
 dir=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
