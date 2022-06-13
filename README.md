@@ -9,4 +9,6 @@ sudo cp <tool> /usr/bin/
 ```
 
 ## Tools
-`gita` - Initialize and push git repository on Github  
+
+### `gita`
+Initialize and push git repository on Github  
