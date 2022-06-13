@@ -9,6 +9,10 @@ read REPO
 
 dir=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 
+if [ ! -f README.md ]; then
+    echo "# $REPO" >> README.md
+fi
+
 git init
 git add .
 git commit -m "Init commit"
