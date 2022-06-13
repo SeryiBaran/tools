@@ -1,8 +1,11 @@
 #!/bin/bash
 
+USERNAME=$(git config user.name)
+
+echo "Welcome to \"gita\", $USERNAME!"
+
 echo -n "Enter branch name: "
 read BRANCH
-USERNAME = $(git config user.name)
 echo -n "Enter Github repo name: "
 read REPO
 
