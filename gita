@@ -8,6 +8,8 @@ echo -n "Enter branch name: "
 read BRANCH
 echo -n "Enter Github repo name: "
 read REPO
+echo -n "Use SSH? (Type y/n): "
+read SSH_BOOL
 
 dir=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 
@@ -19,5 +21,13 @@ git init
 git add .
 git commit -m "Init commit"
 git branch -M "$BRANCH"
-git remote add origin "https://github.com/$USERNAME/$REPO.git"
+
+if [ "$SSH_BOOL" == "y" ]; then
+    git remote add origin "git@github.com:$USERNAME/$REPO.git"
+elif [ "$SSH_BOOL" == "n" ]; then
+    git remote add origin "https://github.com/$USERNAME/$REPO.git"
+else
+    echo "Answer on \"Use SSH?\" is not valid! Exit\!"
+    exit
+fi
 git push -u origin "$BRANCH"
